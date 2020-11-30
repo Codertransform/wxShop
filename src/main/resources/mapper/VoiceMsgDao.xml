@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mikes.shop.dao.VoiceMsgDao">
+
+    <sql id="VoiceMsgColumns">
+        a.id AS "id",
+        a.ToUserName AS "ToUserName",
+        a.FromUserName AS "FromUserName",
+        a.MsgType AS "MsgType",
+        a.MediaId AS "MediaId",
+        a.Format AS "Format",
+        a.Recognition AS "Recognition",
+        a.MsgId AS "MsgId",
+        a.CreateTime AS "CreateTime",
+        a.del_flag AS "del_flag"
+	</sql>
+
+    <insert id="insert">
+		INSERT INTO we_msg(
+			id,
+			ToUserName,
+			FromUserName,
+			MsgType,
+			MediaId,
+			Format,
+			Recognition,
+			MsgId,
+			CreateTime,
+			del_flag
+		) VALUES (
+			#{id},
+			#{ToUserName},
+			#{FromUserName},
+			#{MsgType},
+			#{MediaId},
+			#{Format},
+			#{Recognition},
+			#{MsgId},
+			#{CreateTime},
+			#{delFlag}
+		)
+	</insert>
+
+</mapper>
